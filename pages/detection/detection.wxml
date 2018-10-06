@@ -1,0 +1,10 @@
+<!--pages/detection/detection.wxml-->
+<view>
+  <view image-wrapper>
+    <image src='{{feedbackimage}}' class="image"></image>
+  </view>
+
+  <view class="end-test">
+    <view bindtap="end" class="endButton" hover-class="endClick">结束</view>
+  </view>
+</view>

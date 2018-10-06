@@ -1,0 +1,8 @@
+<!--pages/takePhoto/takePhoto.wxml-->
+<view class="background">
+  <camera device-position="{{device}}" style='width:90%; height:75%'>
+  </camera>
+    <view bindtap='switchDevice' class='botton-wrapper'>
+      <image style='height: 70rpx;width: 70rpx;' src="../../image/cameraChange.jpg" mode="aspectFit"></image>
+  </view>
+</view>

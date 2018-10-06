@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view>
+  <view class="cover-wrapper">
+    <image class="pikaqiu" src="/image/pikaqiu.gif" ></image>
+  </view>
+
+  <view class="start-test">
+    <view bindtap="go" class="goButton" hover-class="goClick">Go </view>
+  </view>
+</view>

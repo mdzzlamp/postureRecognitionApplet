@@ -1,0 +1,10 @@
+<!--pages/report/report.wxml-->
+<view>
+<canvas style="width:{{itemWidth}}px; height:{{itemHeight}}px;" canvas-id="myCanvas">
+
+<button bindtap='saveImage'>保存图片</button>
+<button bindtap='toHome'>继续学习</button>
+</canvas>
+
+</view>
+

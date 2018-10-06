@@ -1,0 +1,52 @@
+/**index.wxss**/
+.cover-wrapper{
+margin-top: 36px; 
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.pikaqiu{
+height: 320px;
+width:320px;
+}
+ .start-test{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+}
+
+.start-test .goButton{
+  margin-top: 20px;
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(169, 184, 239);
+  background-color: white;
+  font-size: 38px;
+  font-weight: 700;
+
+}
+
+.start-test .goClick{
+  margin-top: 20px;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: transparent;
+  font-size: 36px;
+  font-weight: 700;
+
+}
