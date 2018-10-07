@@ -1,4 +1,5 @@
 // pages/correct/correct.js
+// const timer = require('../../utils/wxTimer.js');
 Page({
 
   /**
@@ -10,6 +11,8 @@ Page({
     judgeList: [],
     imagesNum: 0,
     borderColor: '',
+    wxTimerList: {},
+    state: false
   },
 
   takePhoto: function () {
@@ -45,13 +48,20 @@ Page({
 
   warnInteraction: function (result) {
     if (result == 1) {
-      wx.navigateTo({
-        url: '../detection/detection'
+      this.setData({
+        state: true
       })
+      clearInterval(this.interval)
+      let timer = setTimeout(() => {
+        clearTimeout(timer)
+        wx.reLaunch({
+          url: '../detection/detection'
+        })
+      }, 3000)
     }
     if (result == 0) {
-      wx.navigateTo({
-        url: '../detection/detection'
+      this.setData({
+        state: false
       })
     }
   },

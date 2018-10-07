@@ -15,7 +15,7 @@ Page({
     })
   },
   go: function () {
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../correct/correct'
     })
   },

@@ -1,52 +1,54 @@
 /* pages/detection/detection.wxss */
-.image-wrapper{
- margin-top: 36px;  
-display: flex;
-flex-direction: row;
-justify-content: center;
+
+.camera-wrapper {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .image {
-height: 320px;
-width:320px;
+  height: 320px;
+  width: 320px;
 }
 
-.end-test{
-   margin-top: 50px;
+.end-test {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
 }
-.end-test .endButton{
-  margin-top: 20px;
-  height: 160px;
+
+.end-test .endButton {
+  height: 50px;
   width: 160px;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 5%;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(169, 184, 239);
+  color:black;
   background-color: white;
-  font-size: 38px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 500;
+  border: 1px solid black;
 
 }
 
-.end-test .endClick{
-  margin-top: 20px;
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.end-test .endClick {
+  height: 50px;
+  width: 160px;
+  border-radius: 5%;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-color: transparent;
-  font-size: 36px;
-  font-weight: 700;
+  color:black;
+  background-color: antiquewhite;
+  font-size: 20px;
+  font-weight: 500;
+  border: 1px solid black;
 
 }

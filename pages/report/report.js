@@ -130,7 +130,7 @@ Page({
 
   //跳转到home页面
   toHome: function () {
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../index/index'
     })
   }

@@ -56,7 +56,7 @@ Page({
   },
 
   end: function () {
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../report/report'
     })
   },

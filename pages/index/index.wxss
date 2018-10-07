@@ -1,6 +1,6 @@
 /**index.wxss**/
 .cover-wrapper{
-margin-top: 36px; 
+margin-top: 136px; 
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -20,33 +20,34 @@ width:320px;
 }
 
 .start-test .goButton{
-  margin-top: 20px;
-  height: 160px;
+  height: 50px;
   width: 160px;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 5%;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(169, 184, 239);
+  color:black;
   background-color: white;
-  font-size: 38px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 500;
+  border: 1px solid black;
 
 }
 
 .start-test .goClick{
-  margin-top: 20px;
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+   height: 50px;
+  width: 160px;
+  border-radius: 5%;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-color: transparent;
-  font-size: 36px;
-  font-weight: 700;
+  color:black;
+  background-color: beige;
+  font-size: 20px;
+  font-weight: 500;
+  border: 1px solid black;
+
 
 }

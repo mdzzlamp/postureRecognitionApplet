@@ -1,8 +1,12 @@
 <!--pages/detection/detection.wxml-->
 <view>
-  <view image-wrapper>
-    <image src='{{feedbackimage}}' class="image"></image>
+  <view class="camera-wrapper">
+    <camera device-position="{{device}}" style='width:320px; height:320px'>
+      <cover-image src='{{feedbackimage}}' class="image">
+      </cover-image>
+    </camera>
   </view>
+
 
   <view class="end-test">
     <view bindtap="end" class="endButton" hover-class="endClick">结束</view>
