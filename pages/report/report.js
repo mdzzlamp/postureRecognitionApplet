@@ -60,7 +60,7 @@ Page({
     }
     if (count > parseInt(0.8 * results.length)) {     
   
-      ctx.drawImage("/image/report1.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
+      ctx.drawImage("/image/report3.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
       ctx.fillText(time, 0.5 * WIDTH, 0.65 * HEIGHT);
       ctx.fillText('你可太菜了！', 0.5 * WIDTH, 0.7 * HEIGHT);
       ctx.fillText('获得了一朵小红花！', 0.5 * WIDTH, 0.75 * HEIGHT);
@@ -72,7 +72,7 @@ Page({
  
     } else if (count > parseInt(0.6 * results.length) && count <= parseInt(0.8 * results.length)) {
 
-      ctx.drawImage("/image/report1.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
+      ctx.drawImage("/image/report2.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
       ctx.fillText(time, 0.5 * WIDTH, 0.65 * HEIGHT);
       ctx.fillText('不行呀，要加油呀！', 0.5 * WIDTH, 0.7 * HEIGHT);
       ctx.fillText('获得了两朵小红花！', 0.5 * WIDTH, 0.75 * HEIGHT);
@@ -83,7 +83,7 @@ Page({
       ctx.drawImage("/image/flower_grey.png", 0.65 * WIDTH, 0.78 * HEIGHT, 30, 25)
     } else if (count > parseInt(0.4 * results.length) && count <= parseInt(0.6 * results.length)) {
     
-      ctx.drawImage("/image/report1.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
+      ctx.drawImage("/image/report2.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
       ctx.fillText(time, 0.5 * WIDTH, 0.65 * HEIGHT);
       ctx.fillText('凑合吧！', 0.5 * WIDTH, 0.7 * HEIGHT);
       ctx.fillText('获得了三朵小红花！', 0.5 * WIDTH, 0.75 * HEIGHT);
