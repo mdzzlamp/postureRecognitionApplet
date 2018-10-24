@@ -62,7 +62,7 @@ Page({
   
       ctx.drawImage("/image/report1.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
       ctx.fillText(time, 0.5 * WIDTH, 0.65 * HEIGHT);
-      ctx.fillText('今天我家孩子坐得真端正！', 0.5 * WIDTH, 0.7 * HEIGHT);
+      ctx.fillText('你可太菜了！', 0.5 * WIDTH, 0.7 * HEIGHT);
       ctx.fillText('获得了一朵小红花！', 0.5 * WIDTH, 0.75 * HEIGHT);
       ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.78 * HEIGHT, 30, 25)
       ctx.drawImage("/image/flower_grey.png", 0.35 * WIDTH, 0.78 * HEIGHT, 30, 25)
@@ -74,7 +74,7 @@ Page({
 
       ctx.drawImage("/image/report1.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
       ctx.fillText(time, 0.5 * WIDTH, 0.65 * HEIGHT);
-      ctx.fillText('今天我家孩子坐得真端正！', 0.5 * WIDTH, 0.7 * HEIGHT);
+      ctx.fillText('不行呀，要加油呀！', 0.5 * WIDTH, 0.7 * HEIGHT);
       ctx.fillText('获得了两朵小红花！', 0.5 * WIDTH, 0.75 * HEIGHT);
       ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.78 * HEIGHT, 30, 25)
       ctx.drawImage("/image/flower_red.png", 0.35 * WIDTH, 0.78 * HEIGHT, 30, 25)
@@ -85,7 +85,7 @@ Page({
     
       ctx.drawImage("/image/report1.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
       ctx.fillText(time, 0.5 * WIDTH, 0.65 * HEIGHT);
-      ctx.fillText('今天我家孩子坐得真端正！', 0.5 * WIDTH, 0.7 * HEIGHT);
+      ctx.fillText('凑合吧！', 0.5 * WIDTH, 0.7 * HEIGHT);
       ctx.fillText('获得了三朵小红花！', 0.5 * WIDTH, 0.75 * HEIGHT);
       ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.78 * HEIGHT, 30, 25)
       ctx.drawImage("/image/flower_red.png", 0.35 * WIDTH, 0.78 * HEIGHT, 30, 25)
@@ -107,7 +107,7 @@ Page({
     
       ctx.drawImage("/image/report1.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
       ctx.fillText(time, 0.5 * WIDTH, 0.65 * HEIGHT);
-      ctx.fillText('今天我家孩子坐得真端正！', 0.5 * WIDTH, 0.7 * HEIGHT);
+      ctx.fillText('太优秀了！', 0.5 * WIDTH, 0.7 * HEIGHT);
       ctx.fillText('获得了五朵小红花！', 0.5 * WIDTH, 0.75 * HEIGHT);
       ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.78 * HEIGHT, 30, 25)
       ctx.drawImage("/image/flower_red.png", 0.35 * WIDTH, 0.78 * HEIGHT, 30, 25)
