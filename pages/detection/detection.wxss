@@ -1,54 +1,39 @@
 /* pages/detection/detection.wxss */
 
 .camera-wrapper {
-  margin-top: 36px;
+  margin-top: 18%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
+.white-background{
+  position:absolute;
+  top:0;
+  height: 90vw;
+  width: 90vw;
+  z-index: 0;
+  background-color: white;
+}
+
 .image {
-  height: 320px;
-  width: 320px;
+  position:absolute;
+  top:0;
+  height: 90vw;
+  width: 90vw;
+  z-index: 1;
 }
 
 .end-test {
-  margin-top: 50px;
+  margin-top: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
 }
 
 .end-test .endButton {
-  height: 50px;
-  width: 160px;
-  border-radius: 5%;
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:black;
-  background-color: white;
-  font-size: 20px;
-  font-weight: 500;
-  border: 1px solid black;
-
+  height: 60px;
+  width: 150px;
 }
 
-.end-test .endClick {
-  height: 50px;
-  width: 160px;
-  border-radius: 5%;
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:black;
-  background-color: antiquewhite;
-  font-size: 20px;
-  font-weight: 500;
-  border: 1px solid black;
-
-}

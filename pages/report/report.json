@@ -1,1 +1,7 @@
-{}
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000000",
+  "navigationBarTitleText": "报告",
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom"
+}

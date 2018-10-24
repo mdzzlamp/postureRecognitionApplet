@@ -1,1 +1,14 @@
 /* pages/report/report.wxss */
+
+.button {
+  position: absolute;
+  bottom: 5%;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.restart-btn, .save-btn {
+  height: 48px;
+  width: 130px;
+}

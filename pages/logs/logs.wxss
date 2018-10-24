@@ -1,8 +1,26 @@
 .log-list {
   display: flex;
   flex-direction: column;
-  padding: 40rpx;
+  justify-content: center;
+  align-items: center;
 }
-.log-item {
+.slogan{
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  height: 44px;
+  width:260px;
+  margin-top: 30px;
+
+}
+.logo{
+  background-color:#EACAE4 ;
+  border-radius: 50%;
+  height: 78px;
+  width:78px;
+  margin-top: 15px;
+}
+/* .log-item {
   margin: 10rpx;
-}
+} */

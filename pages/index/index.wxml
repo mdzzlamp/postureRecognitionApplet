@@ -1,10 +1,12 @@
 <!--index.wxml-->
 <view>
+  <view class="title">矫了个姿</view>
   <view class="cover-wrapper">
-    <image class="pikaqiu" mode='aspectFit' src="/image/pikaqiu.gif" ></image>
+    <image class="pic_home" mode='aspectFit' src="/image/pic_home.png" ></image>
   </view>
 
   <view class="start-test">
-    <view bindtap="go" class="goButton" hover-class="goClick">开始</view>
+    <image bindtap="go" class="goButton" src="/image/start.png"></image>
+    <!-- <view  class="goButton" hover-class="goClick">开始</view> -->
   </view>
 </view>

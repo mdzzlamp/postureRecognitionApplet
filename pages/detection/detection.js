@@ -1,4 +1,7 @@
 // pages/correct/correct.js
+const messager=require("../../utils/messenger.js");
+var results = [];
+
 Page({
 
   /**
@@ -8,10 +11,10 @@ Page({
     imageUrl: '',
     judgeList: [],
     imagesNum: 0,
-    feedbackimage: '../../image/pikaqiu.gif',
+    feedbackimage: '/image/state1.png',
   },
 
-  takePhoto: function () {
+  takePhoto: function() {
     var that = this
     var ctx = wx.createCameraContext()
     ctx.takePhoto({
@@ -26,36 +29,66 @@ Page({
           url: 'https://www.crophone.com/mdzz-mp/judge-by-image',
           filePath: that.data.imageUrl,
           name: 'image',
-          success: function (res) {
+          success: function(res) {
             var judgeResult = JSON.parse(res.data)
             console.log("judgeResult", judgeResult)
-            //https://blog.csdn.net/hicoldcat/article/details/53967334
             var param = {}
             var string = "judgeList[" + that.data.imagesNum + "]"
             param[string] = judgeResult;
             param.imagesNum = that.data.imagesNum + 1;
             that.setData(param);
+            that.interval = setTimeout(that.takePhoto, 5000);
             that.warnInteraction(judgeResult.category);
+          },
+          fail: () => {
+            that.interval = setTimeout(that.takePhoto, 5000);
           }
         })
       }
     })
   },
 
-  warnInteraction: function (result) {
-    if (result == 1) {
+  warnInteraction: function(result) {
+    results.splice(0, 0, result);
+    let count = 0;
+    for (let i = 0; i <= results.length && i <= 2; i++) {
+      if (results[i] === 1) {
+        break;
+      } else {
+        count++;
+      }
+
+    }
+    if (count === 0) {
       this.setData({
-        feedbackimage: '../../image/pikaqiu.gif'
+        feedbackimage: '/image/state1.png'
       })
     }
-    if (result == 0) {
+    if (count === 3) {
       this.setData({
-        feedbackimage: '../../image/pikaqiu2.gif'
+        feedbackimage: '/image/state3.png'
       })
     }
+    if (count === 1 || count === 2) {
+      this.setData({
+        feedbackimage: '/image/state2.png'
+      })
+    }
+    //   if (result == 1) {
+    //     this.setData({
+    //       feedbackimage: '../../image/pikaqiu.gif'
+    //     })
+    //   }
+    //   if (result == 0) {
+    //     this.setData({
+    //       feedbackimage: '../../image/pikaqiu2.gif'
+    //     })
+    //   }
   },
 
-  end: function () {
+  end: function() {
+    clearTimeout(this.interval);
+    messager.sendValue('result',results);
     wx.reLaunch({
       url: '../report/report'
     })
@@ -63,59 +96,61 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    this.setData({
+  onReady: function() {
+    // this.setData({
 
-    });
-    this.interval = setInterval(this.takePhoto, 5000);
+    // });
+    // this.interval = setInterval(this.takePhoto, 5000);
+    results = [];
+    this.takePhoto();
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
 

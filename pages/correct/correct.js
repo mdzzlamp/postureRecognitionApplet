@@ -1,5 +1,6 @@
 // pages/correct/correct.js
 // const timer = require('../../utils/wxTimer.js');
+
 Page({
 
   /**
@@ -27,7 +28,7 @@ Page({
 
         //将照片传至服务器，并获得判断返回结果
         wx.uploadFile({
-          url: 'https://www.crophone.com/mdzz-mp/judge-by-image',
+          url: 'https://www.crophone.com/mdzz-mp/test/check-body',
           filePath: that.data.imageUrl,
           name: 'image',
           success: function (res) {
@@ -39,7 +40,11 @@ Page({
             param[string] = judgeResult;
             param.imagesNum = that.data.imagesNum + 1;
             that.setData(param);
+            that.interval = setTimeout(that.takePhoto, 5000);
             that.warnInteraction(judgeResult.category);
+          },
+          fail: function() {
+            that.interval = setTimeout(that.takePhoto, 5000);
           }
         })
       }
@@ -51,7 +56,7 @@ Page({
       this.setData({
         state: true
       })
-      clearInterval(this.interval)
+      clearTimeout(this.interval)
       let timer = setTimeout(() => {
         clearTimeout(timer)
         wx.reLaunch({
@@ -90,10 +95,11 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.setData({
+    // this.setData({
       
-    });
-    this.interval = setInterval(this.takePhoto, 5000);
+    // });
+    // this.interval = setInterval(this.takePhoto, 5000);
+    this.takePhoto();
   },
 
   /**

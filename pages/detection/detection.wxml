@@ -1,7 +1,8 @@
 <!--pages/detection/detection.wxml-->
 <view>
   <view class="camera-wrapper">
-    <camera device-position="{{device}}" style='width:320px; height:320px'>
+    <camera device-position="{{device}}" style='width:90vw; height:90vw'>
+      <cover-view class="white-background"></cover-view>
       <cover-image src='{{feedbackimage}}' class="image">
       </cover-image>
     </camera>
@@ -9,6 +10,7 @@
 
 
   <view class="end-test">
-    <view bindtap="end" class="endButton" hover-class="endClick">结束</view>
+  <image bindtap="end" class="endButton" src='/image/end.png'> </image>
+    <!-- <view bindtap="end" class="endButton" hover-class="endClick">结束</view> -->
   </view>
 </view>

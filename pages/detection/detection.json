@@ -1,1 +1,7 @@
-{}
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000000",
+  "navigationBarTitleText": "专注中",
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom"
+}

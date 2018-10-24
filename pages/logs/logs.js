@@ -5,11 +5,23 @@ Page({
   data: {
     logs: []
   },
-  onLoad: function () {
-    this.setData({
-      logs: (wx.getStorageSync('logs') || []).map(log => {
-        return util.formatTime(new Date(log))
+  
+  autoSkip: function () {
+    clearInterval(this.interval)
+    let timer = setTimeout(() => {
+      clearTimeout(timer)
+      wx.reLaunch({
+        url: '../index/index'
       })
+    }, 3000)
+  },
+
+  onLoad: function () {
+
+    this.setData({
+     
     })
+    this.autoSkip()
   }
+
 })
