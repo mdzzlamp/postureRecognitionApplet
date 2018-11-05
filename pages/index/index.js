@@ -2,10 +2,14 @@
 //获取应用实例
 const app = getApp()
 
+const autoTexts = ['来和我一起学习吧！', '今天也要坐端正哦！']
+const touchTexts = ['不要点我，点开始学习吧！']
+
 Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
+    text: '',
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
@@ -14,45 +18,35 @@ Page({
   //     url: '../logs/logs'
   //   })
   // },
-  go: function () {
+  go: function() {
     wx.reLaunch({
       url: '../correct/correct'
     })
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+
+  touch: function() {
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      text: touchTexts[Math.floor(Math.random() * touchTexts.length)]
     })
-  }
+    clearTimeout(this.timer)
+    clearInterval(this.interval)
+    this.timer = setTimeout(() => {
+      this.refreshText();
+      this.interval = setInterval(this.refreshText, 3000);
+    }, 3000)
+  },
+
+  refreshText: function() {
+    const temp = autoTexts[Math.floor(Math.random() * autoTexts.length)];
+    this.setData({
+      text: temp
+    })
+
+  },
+
+  onLoad: function() {
+    this.refreshText();
+    this.interval = setInterval(this.refreshText, 3000);
+
+  },
 })

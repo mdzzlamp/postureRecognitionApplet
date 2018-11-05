@@ -1,16 +1,18 @@
 <!--pages/detection/detection.wxml-->
 <view>
-  <view class="camera-wrapper">
-    <camera device-position="{{device}}" style='width:90vw; height:90vw'>
+  <view bindtap="touch" class="camera-wrapper">
+
+    <camera style='width:90vw; height:90vw'>
       <cover-view class="white-background"></cover-view>
-      <cover-image src='{{feedbackimage}}' class="image">
-      </cover-image>
+      <cover-image src='{{feedbackimage}}' class="image"></cover-image>
+      <cover-view class="dialog">{{text}}</cover-view>
+      <cover-view class="dialog-bottom"></cover-view>
     </camera>
   </view>
 
 
   <view class="end-test">
-  <image bindtap="end" class="endButton" src='/image/end.png'> </image>
+    <image bindtap="end" class="endButton" src='/image/end.png'> </image>
     <!-- <view bindtap="end" class="endButton" hover-class="endClick">结束</view> -->
   </view>
 </view>

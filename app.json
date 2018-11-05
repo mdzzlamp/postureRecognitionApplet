@@ -1,8 +1,9 @@
 {
   "pages": [
+
     "pages/logs/logs",
     "pages/index/index",
-    "pages/correct/correct",
+   "pages/correct/correct",
     "pages/detection/detection",
     "pages/report/report"
   ],

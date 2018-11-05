@@ -1,7 +1,7 @@
 {
   "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "#000000",
+  "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTitleText": "矫正框",
-  "navigationBarTextStyle": "white",
+  "navigationBarTextStyle": "black",
   "navigationStyle": "custom"
 }

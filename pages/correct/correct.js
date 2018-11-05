@@ -1,6 +1,8 @@
 // pages/correct/correct.js
 // const timer = require('../../utils/wxTimer.js');
 
+var ctx = {};
+
 Page({
 
   /**
@@ -8,42 +10,39 @@ Page({
    */
   data: {
     device: "front",
-    imageUrl: '',
-    judgeList: [],
-    imagesNum: 0,
     borderColor: '',
-    wxTimerList: {},
-    state: false
+    state: false,
+    correctFrame: '../../image/correct_wrong.png'
   },
 
   takePhoto: function () {
     var that = this
-    var ctx = wx.createCameraContext()
     ctx.takePhoto({
       quality: 'high',
+      fail: (e) => {
+        console.log(e);
+      },
       success: (res) => {
-        this.setData({
-          imageUrl: res.tempImagePath,
-        })
+        // this.setData({
+        //   imageUrl: res.tempImagePath,
+        // })
 
         //将照片传至服务器，并获得判断返回结果
         wx.uploadFile({
-          url: 'https://www.crophone.com/mdzz-mp/test/check-body',
-          filePath: that.data.imageUrl,
+          url: 'https://delbertbeta.cc/mdzz-mp/test/check-body',
+          filePath: res.tempImagePath,
           name: 'image',
+          complete: function (res) {
+            console.log(res)
+          },
           success: function (res) {
             var judgeResult = JSON.parse(res.data)
             console.log("judgeResult", judgeResult)
-            //https://blog.csdn.net/hicoldcat/article/details/53967334
-            var param = {}
-            var string = "judgeList[" + that.data.imagesNum + "]"
-            param[string] = judgeResult;
-            param.imagesNum = that.data.imagesNum + 1;
-            that.setData(param);
             that.interval = setTimeout(that.takePhoto, 5000);
             that.warnInteraction(judgeResult.category);
           },
-          fail: function() {
+          fail: function (e) {
+            console.log(e)
             that.interval = setTimeout(that.takePhoto, 5000);
           }
         })
@@ -54,23 +53,31 @@ Page({
   warnInteraction: function (result) {
     if (result == 1) {
       this.setData({
-        state: true
+        state: true,
+        correctFrame:'../../image/correct_right.png'
+
       })
       clearTimeout(this.interval)
       let timer = setTimeout(() => {
         clearTimeout(timer)
-        wx.reLaunch({
-          url: '../detection/detection'
-        })
+        // wx.reLaunch({
+        //   url: '../detection/detection'
+        // })
       }, 3000)
     }
     if (result == 0) {
       this.setData({
-        state: false
+        state: false,
+        correctFrame: '../../image/correct_wrong.png'
       })
     }
   },
 
+jump:function(){
+  wx.reLaunch({
+          url: '../detection/detection'
+        })
+},
 
 
   switchDevice: function () {
@@ -83,12 +90,13 @@ Page({
         device: "front"
       })
     }
+    
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**
@@ -96,53 +104,54 @@ Page({
    */
   onReady: function () {
     // this.setData({
-      
+
     // });
     // this.interval = setInterval(this.takePhoto, 5000);
-    this.takePhoto();
+    ctx = wx.createCameraContext();
+    setTimeout(this.takePhoto, 1000);
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
 
-  
+
 })

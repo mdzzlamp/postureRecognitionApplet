@@ -1,8 +1,12 @@
 <!--pages/takePhoto/takePhoto.wxml-->
 <view class="background">
-  <camera device-position="{{device}}" style='width:90%; height:65%'>
+  <camera device-position="{{device}}" class="camera" >
+  <cover-view class="white"></cover-view>
+  <cover-image src='{{correctFrame}}' class="frame" ></cover-image>
   </camera>
-  <view bindtap='switchDevice' class='botton-wrapper'>切换摄像头</view>
-  <view wx:if="{{state}}" class="remind-text">矫正成功，三秒后开始检测</view>
-  <view wx:else class="remind-text">请调整坐姿</view>
+  <view wx:if="{{state}}" class="remind-text">对准小人哦</view>
+  <view wx:else class="remind-text">好啦，点击下一步吧</view>
+  <image bindtap='switchDevice' class='switch' src="/image/cameraChange.svg"></image>
+  <image bindtap='jump' class='next_btn' src="/image/btn_next.png"mode="widthFix"></image>
+  
 </view>

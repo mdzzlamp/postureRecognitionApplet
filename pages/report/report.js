@@ -30,7 +30,7 @@ Page({
     wx.getSystemInfo({
       success: function(res) {
         WIDTH = res.windowWidth
-        HEIGHT = res.windowHeight
+        HEIGHT = 0.78*res.windowHeight
       },
     })
 
@@ -40,13 +40,16 @@ Page({
     });
 
     /*绘制canvas*/
+   
 
     var ctx = wx.createCanvasContext('myCanvas')
-
+    ctx.rect(0, 0,WIDTH, HEIGHT);
+    ctx.setFillStyle('white');
+    ctx.fill();
     var time = util.formatTime(new Date());
     ctx.setFontSize(16);
     ctx.setFillStyle('#333333');
-    ctx.font = "SentyTEApro";
+    // ctx.font = "SentyTEApro";
     ctx.setTextAlign('center');
 
     const results = messager.getValue('result');
@@ -60,66 +63,67 @@ Page({
     }
     if (count > parseInt(0.8 * results.length)) {     
   
-      ctx.drawImage("/image/report3.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
-      ctx.fillText(time, 0.5 * WIDTH, 0.65 * HEIGHT);
-      ctx.fillText('你可太菜了！', 0.5 * WIDTH, 0.7 * HEIGHT);
-      ctx.fillText('获得了一朵小红花！', 0.5 * WIDTH, 0.75 * HEIGHT);
-      ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_grey.png", 0.35 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_grey.png", 0.45 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_grey.png", 0.55 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_grey.png", 0.65 * WIDTH, 0.78 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/report3.png", 0.1 * WIDTH, 0.1 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
+      ctx.fillText(time, 0.5 * WIDTH, 0.8 * HEIGHT);
+      ctx.fillText('你可太菜了！', 0.5 * WIDTH, 0.85 * HEIGHT);
+      ctx.fillText('获得了一朵小红花！', 0.5 * WIDTH, 0.90 * HEIGHT);
+      ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_grey.png", 0.35 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_grey.png", 0.45 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_grey.png", 0.55 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_grey.png", 0.65 * WIDTH, 0.94 * HEIGHT, 30, 25)
  
     } else if (count > parseInt(0.6 * results.length) && count <= parseInt(0.8 * results.length)) {
 
       ctx.drawImage("/image/report2.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
-      ctx.fillText(time, 0.5 * WIDTH, 0.65 * HEIGHT);
-      ctx.fillText('不行呀，要加油呀！', 0.5 * WIDTH, 0.7 * HEIGHT);
-      ctx.fillText('获得了两朵小红花！', 0.5 * WIDTH, 0.75 * HEIGHT);
-      ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_red.png", 0.35 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_grey.png", 0.45 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_grey.png", 0.55 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_grey.png", 0.65 * WIDTH, 0.78 * HEIGHT, 30, 25)
+      ctx.fillText(time, 0.5 * WIDTH, 0.8 * HEIGHT);
+      ctx.fillText('不行呀，要加油呀！', 0.5 * WIDTH, 0.85 * HEIGHT);
+      ctx.fillText('获得了两朵小红花！', 0.5 * WIDTH, 0.90 * HEIGHT);
+      ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_red.png", 0.35 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_grey.png", 0.45 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_grey.png", 0.55 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_grey.png", 0.65 * WIDTH, 0.94 * HEIGHT, 30, 25)
     } else if (count > parseInt(0.4 * results.length) && count <= parseInt(0.6 * results.length)) {
     
       ctx.drawImage("/image/report2.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
-      ctx.fillText(time, 0.5 * WIDTH, 0.65 * HEIGHT);
-      ctx.fillText('凑合吧！', 0.5 * WIDTH, 0.7 * HEIGHT);
-      ctx.fillText('获得了三朵小红花！', 0.5 * WIDTH, 0.75 * HEIGHT);
-      ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_red.png", 0.35 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_red.png", 0.45 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_grey.png", 0.55 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_grey.png", 0.65 * WIDTH, 0.78 * HEIGHT, 30, 25)
+      ctx.fillText(time, 0.5 * WIDTH, 0.8 * HEIGHT);
+      ctx.fillText('凑合吧！', 0.5 * WIDTH, 0.85 * HEIGHT);
+      ctx.fillText('获得了三朵小红花！', 0.5 * WIDTH, 0.9 * HEIGHT);
+      ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_red.png", 0.35 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_red.png", 0.45 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_grey.png", 0.55 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_grey.png", 0.65 * WIDTH, 0.94 * HEIGHT, 30, 25)
     } else if (count > parseInt(0.2 * results.length) && count <= parseInt(0.4 * results.length)) {
      
       ctx.drawImage("/image/report1.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
-      ctx.fillText(time, 0.5 * WIDTH, 0.65 * HEIGHT);
-      ctx.fillText('今天我家孩子坐得真端正！', 0.5 * WIDTH, 0.7 * HEIGHT);
-      ctx.fillText('获得了四朵小红花！', 0.5 * WIDTH, 0.75 * HEIGHT);
-      ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_red.png", 0.35 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_red.png", 0.45 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_red.png", 0.55 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_grey.png", 0.65 * WIDTH, 0.78 * HEIGHT, 30, 25)
+      ctx.fillText(time, 0.5 * WIDTH, 0.8 * HEIGHT);
+      ctx.fillText('今天我家孩子坐得真端正！', 0.8 * WIDTH, 0.7 * HEIGHT);
+      ctx.fillText('获得了四朵小红花！', 0.5 * WIDTH, 0.85 * HEIGHT);
+      ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_red.png", 0.35 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_red.png", 0.45 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_red.png", 0.55 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_grey.png", 0.65 * WIDTH, 0.94 * HEIGHT, 30, 25)
     } else if (count <= parseInt(0.2 * results.length)) {
     
       ctx.drawImage("/image/report1.png", 0.1 * WIDTH, 0.08 * HEIGHT, WIDTH * 0.8, WIDTH * 0.8)
-      ctx.fillText(time, 0.5 * WIDTH, 0.65 * HEIGHT);
-      ctx.fillText('太优秀了！', 0.5 * WIDTH, 0.7 * HEIGHT);
-      ctx.fillText('获得了五朵小红花！', 0.5 * WIDTH, 0.75 * HEIGHT);
-      ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_red.png", 0.35 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_red.png", 0.45 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_red.png", 0.55 * WIDTH, 0.78 * HEIGHT, 30, 25)
-      ctx.drawImage("/image/flower_red.png", 0.65 * WIDTH, 0.78 * HEIGHT, 30, 25)
+      ctx.fillText(time, 0.5 * WIDTH, 0.8 * HEIGHT);
+      ctx.fillText('太优秀了！', 0.5 * WIDTH, 0.85 * HEIGHT);
+      ctx.fillText('获得了五朵小红花！', 0.5 * WIDTH, 0.9 * HEIGHT);
+      ctx.drawImage("/image/flower_red.png", 0.25 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_red.png", 0.35 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_red.png", 0.45 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_red.png", 0.55 * WIDTH, 0.94 * HEIGHT, 30, 25)
+      ctx.drawImage("/image/flower_red.png", 0.65 * WIDTH, 0.94 * HEIGHT, 30, 25)
       
     }
 
 
     //绘制
     ctx.draw(false, setTimeout(function() {
+    
       wx.canvasToTempFilePath({
         x: 0,
         y: 0,

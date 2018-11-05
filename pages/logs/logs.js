@@ -13,7 +13,7 @@ Page({
       wx.reLaunch({
         url: '../index/index'
       })
-    }, 3000)
+    }, 2000)
   },
 
   onLoad: function () {

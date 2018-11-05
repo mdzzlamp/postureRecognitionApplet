@@ -1,31 +1,31 @@
 /* pages/detection/detection.wxss */
 
 .camera-wrapper {
-  margin-top: 18%;
+  margin-top: 25%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.white-background{
-  position:absolute;
-  top:0;
+.white-background {
+  position: absolute;
+  top: 0;
   height: 90vw;
   width: 90vw;
   z-index: 0;
-  background-color: white;
+   background-color: white; 
 }
 
 .image {
-  position:absolute;
-  top:0;
+  position: absolute;
+  top: 0;
   height: 90vw;
   width: 90vw;
   z-index: 1;
 }
 
 .end-test {
-  margin-top: 20%;
+  margin-top: 23%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,3 +37,28 @@
   width: 150px;
 }
 
+.dialog {
+  background-color: #f8f8f8;
+  border: 2px solid gray;
+  right: 4px;
+  bottom:76% ;
+  border-radius: 10px;
+  min-width: 100px;
+  max-width: 200px;
+  text-align: left;
+  padding: 10px;
+  position: absolute;
+  font-size: 18px;
+  z-index: 2;
+}
+
+
+.dialog-bottom {
+  border-style: solid;
+  position: absolute;
+  border-color: gray transparent transparent transparent;
+  border-width: 8px 8px 0px 8px;
+  right: 110px;
+  bottom: 74%;
+  z-index: 2; 
+}

@@ -1,33 +1,56 @@
 /**index.wxss**/
-.title{
+
+.title {
   text-align: center;
-  
-}
-.cover-wrapper{
-margin-top: 18%; 
-display: flex;
-flex-direction: row;
-justify-content: center;
 }
 
-.pic_home{
-height: 50vh;
-width:95vw;
+.cover-wrapper {
+  margin-top: 18%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
- .start-test{
+.dialog {
+  background-color: #f8f8f8;
+  border: 2px solid gray;
+  right: 15px;
+  bottom: 75%;
+  border-radius: 10px;
+  min-width: 50px;
+  max-width: 160px;
+  text-align: left;
+  padding: 10px;
+  position: absolute;
+  font-size: 18px;
+}
+
+.dialog .arrow {
+  border-style: solid;
+  position: absolute;
+}
+
+.dialog-bottom {
+  border-color: gray transparent transparent transparent;
+  border-width: 8px 8px 0px 8px;
+  bottom: -8px;
+}
+
+.pic_home {
+  height: 50vh;
+  width: 95vw;
+}
+
+.start-test {
   margin-top: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
- 
 }
 
-.start-test .goButton{
+.start-test .goButton {
   height: 60px;
   width: 150px;
- 
 }
-
